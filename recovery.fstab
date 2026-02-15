@@ -1,0 +1,19 @@
+# mount point       fstype    device                                                                flags
+/system             erofs     system                                                                display="System";logical;slotselect
+/system_ext         erofs     system_ext                                                            display="System_ext";logical;slotselect
+/vendor             erofs     vendor                                                                display="Vendor";logical;slotselect
+/product            erofs     product                                                               display="Product";logical;slotselect
+/vendor_dlkm        erofs     vendor_dlkm                                                           display="Vendor_dlkm";logical;slotselect
+/system_dlkm        erofs     system_dlkm                                                           display="System_dlkm";logical;slotselect
+
+/metadata           f2fs      /dev/block/by-name/metadata                                           display="Metadata"
+/data               f2fs      /dev/block/by-name/userdata                                           fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,metadata_encryption=aes-256-xts:wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption
+
+/boot               emmc      /dev/block/by-name/boot                                               display="Boot";slotselect
+/vendor_boot        emmc      /dev/block/by-name/vendor_boot                                        display="Vendor Boot";slotselect
+/dtbo               emmc      /dev/block/by-name/dtbo                                               display="DTBO"
+/vbmeta             emmc      /dev/block/by-name/vbmeta                                             display="VBMeta"
+/persist            ext4      /dev/block/by-name/persist                                            display="Persist"
+/misc               emmc      /dev/block/by-name/misc                                               display="Misc"
+/external_sd        auto      /dev/block/mmcblk0p1        /dev/block/mmcblk0                        display="MicroSD";storage;wipeui;removable
+/usb_otg            auto      /dev/block/sdd1             /dev/block/sdd                            display="USB-OTG";storage;wipeui;removable
